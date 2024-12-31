@@ -1,6 +1,7 @@
 body {
-    background: var(--background-ui-dark);
+    background: var(--bg-ui-dark);
     font-family: var(--google-font);
+    font-weight: bold;
     display: grid;
     place-items: center;
     height: 100svh;
@@ -9,15 +10,13 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: black;
-    font-weight: bold;
     /* outline: 2px solid blueviolet; */
 }
 :root {
-    --gradient-color-1: linear-gradient(rgb(113, 191, 203), rgb(142, 200, 202), rgb(217, 223, 195));
-    --sun-color: rgb(255, 237, 204);
     --google-font:"Open Sans", serif;
-    --background-ui-dark: rgb(32, 33, 36);
+    --sun-color: rgb(255, 237, 204);
+    --bg-ui-dark: rgb(32, 33, 36);
+    --bg-gradient-color: linear-gradient(rgb(113, 191, 203), rgb(142, 200, 202), rgb(217, 223, 195));
     --CssScan-ShadowBox: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;;
 }
 
@@ -26,13 +25,13 @@ body {
     max-width: 365px;
     width: 90%;
     height: 500px;
-    background: url(background/mountain-removebg-preview.png) no-repeat, url(background/icons8-sun-80.png) no-repeat , var(--gradient-color-1); 
+    background: url(background/mountain-removebg-preview.png) no-repeat, url(background/icons8-sun-80.png) no-repeat , var(--bg-gradient-color); 
     background-size: 120%, 10%, auto;
     background-position: 50% 120%, 50% 28%;
     border-radius: 20px;
     box-shadow: var(--CssScan-ShadowBox);
 
-    & .number {
+    & .number-wrapper {
         width: 100%;
         height: 50%;
         display: flex;
@@ -43,11 +42,9 @@ body {
             font-size: 3rem;
             margin-top: 40px;
         }
-        & p {
-            font-weight: bold;
-        }
     }
-    & .interface {
+
+    & .interface-wrapper {
         width: 100%;
         height: 50%;
         display: flex;
@@ -59,21 +56,17 @@ body {
 }
 
 /* interface */
-.top-layer {
-    /* background-color: aqua; */
+.interface-top-layer {
     width: 100%;
+    gap: 20px;
     display: flex;
     justify-content: space-around;
-    gap: 20px;
 }
-.bottom-layer {
+.interface-bottom-layer {
     width: 100%;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    margin-bottom: 20px;
-
-    & p {
-        text-align: center;
-    } 
+    text-align: center;
 }
